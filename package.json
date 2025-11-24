@@ -1,0 +1,20 @@
+{
+    "name": "foodzebra",
+    "version": "1.0.0",
+    "type": "module",
+    "main": "main.js",
+    "scripts": {
+        "dev": "electron .",
+        "pack:osx": "electron-packager . foodzebra --out=dist/osx --platform=darwin --arch=x64 --icon=assets/icon.icns --ignore='src|public|dist|.*\\.map$'",
+        "pack:win32": "electron-packager . foodzebra --out=dist/win --platform=win32 --arch=ia32 --ignore='src|public|dist|.*\\.map$'",
+        "pack:win64": "electron-packager . foodzebra --out=dist/win --platform=win32 --arch=x64 --ignore='src|public|dist|.*\\.map$'",
+        "pack:linux": "electron-packager . foodzebra --out=dist/linux --platform=linux --icon=assets/icon.png --ignore='src|public|dist|.*\\.map$'",
+        "build": "npm run pack:osx && npm run pack:win32 && npm run pack:win64 && npm run pack:linux"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "electron": "^39.2.3",
+        "electron-packager": "^17.1.2",
+        "electron-squirrel-startup": "^1.0.0"
+    }
+}
